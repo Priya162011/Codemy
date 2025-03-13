@@ -74,7 +74,7 @@ app.use('/api', student_topic_router);
 app.use('/api',login_router);
 app.use('/api',remark_router)
 app.use('/api',receipt_router)
-app.use('/api/payment',rzr_router);
+app.use('/api',rzr_router);
 
 const serverlisten = async () => {
     try {

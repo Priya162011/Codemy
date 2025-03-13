@@ -42,7 +42,7 @@ function Registration() {
             adharcard: '',
             faculty: '',
             totalfees: '',
-            amount: '',
+            amount: '100',
             type: 0,
             counselor:'',
             joindate: new Date().toISOString().split('T')[0],
@@ -58,18 +58,20 @@ function Registration() {
 
     const handlePayment = async (formData) => {
         try {
+            alert("pay")
             const res = await axios.post('/api/payment/order', { amount: formData.amount });
+            console.log(res.data)
             const { id, amount, currency } = res.data;
 
             const options = {
-                key: "YOUR_RAZORPAY_KEY", 
+                key: "rzp_test_f9fOgQrDsT8Tex", 
                 amount: amount,
                 currency: currency,
                 name: "Codemy IT Institute",
                 description: "Course Admission Payment",
                 order_id: id,
                 handler: async (response) => {
-                    alert("Payment successful!");
+                    // alert("Payment successful!");
                     
                     const studentData = new FormData();
                     Object.keys(formData).forEach(key => {
