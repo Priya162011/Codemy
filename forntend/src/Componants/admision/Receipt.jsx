@@ -2,7 +2,7 @@ import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import {useNavigate} from 'react-router-dom'
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
-import logo from "D:/codemy/forntend/src/assets/logo.jpg"
+import logo from "/src/assets/logo.jpg"
 import axios from 'axios';
 
 const Receipt = forwardRef(({ studentData },ref) => {
