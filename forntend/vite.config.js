@@ -17,6 +17,6 @@ export default defineConfig({
       },
     },
   },
-  base:'/frontend/',
+  base:'./frontend/',
   plugins: [react()],
 })
