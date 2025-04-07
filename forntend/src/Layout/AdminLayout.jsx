@@ -7,16 +7,26 @@ function AdminLayout() {
   const [user, setuser] = useState(null)
   useEffect(() => {
     axios.get(`/api/getsession`, { withCredentials: true }).then(res => {
-        setuser(res.data.data)
+      setuser(res.data.data)
     }).catch(err => {
         console.log(err)
     })
     
 }, [])
+  useEffect(()=>{
+    console.log(user)
+    // sessionStorage.setItem('user_email',user.email)
+    sessionStorage.setItem('user','admin')
+  },[user])
+  // useEffect(()=>{
+  //   // console.log(sessionStorage.getItem('user'))
+  //   // setsesuser(sessionStorage.getItem('user'))
+  // },[sessionStorage.getItem('user')])
   return (
     <div>
       {
-      !user || user?.role !== "admin"?<ErrorPage/>:<>
+        
+      sessionStorage.getItem('user') !== "admin"?<ErrorPage/>:<>
         <Top_bar/>
         <Outlet/></>
       }

@@ -6,12 +6,12 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://api.codemy.live/',
         changeOrigin: true,
         secure:false,
       },
       '/uploads': {
-        target: 'http://localhost:5000',
+        target: 'https://api.codemy.live/',
         changeOrigin: true,
         secure:false,
       },
