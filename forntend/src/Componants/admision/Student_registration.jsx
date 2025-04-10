@@ -94,9 +94,9 @@ function Student_registration() {
         setFieldValue(e.target.name, e.target.files[0]);
     };
     return (
-
         <section className='student_form'>
-            <form onSubmit={handleSubmit}>
+            <h3 className='m-2 text-center text-decoration-underline text-uppercase'>student registration</h3>
+            <form onSubmit={handleSubmit} className='form mt-2'>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4">
@@ -116,7 +116,7 @@ function Student_registration() {
                                 <label htmlFor="" className='form-label'>Counselor</label>
                                 <select name="counselor" id="" className='form-select' onChange={handleChange} value={values.counselor}>
                                     <option value="0">Select counselor</option>
-                                    <option value="Ravi Prajapati">Ravi Prajapati</option>
+                                    <option value="Harsh Patel">Harsh Patel</option>
                                 </select>
                             </div>
                         </div>
@@ -230,12 +230,19 @@ function Student_registration() {
                             </div>
                         </div>
                         <div className="col-md-4">
+                            <div className='mb-2'>
+                                <label htmlFor="" className='form-label'>Student Address</label>
+                                <input type="text" name="address" id="" placeholder='Enter Address' className='form-control' required onChange={handleChange} value={values.address} />
+                            </div>
+                        </div>
+                        <div className="col-md-4">
                             <label className='form-label'>Select Payment Installment Month</label>
                             <select name="month" className='form-select' onChange={handleMonthChange} value={values.month}>
                                 <option value="0">Select payment installment month</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
+                                <option value="4">4</option>
                             </select>
                         </div>
                         {installments.map((installment, index) => (
@@ -258,14 +265,8 @@ function Student_registration() {
                             </div>
                         ))}
                         
-                        <div className="col-md-12">
-                            <div className='mb-2'>
-                                <label htmlFor="" className='form-label'>Student Address</label>
-                                <input type="text" name="address" id="" placeholder='Enter Address' className='form-control' required onChange={handleChange} value={values.address} />
-                            </div>
-                        </div>
-                        <div className='col-md-2'>
-                            <button className='btn_wrap w-100 mt-1'>Submit</button>
+                        <div className='col-md-12'>
+                            <input type='submit' className='btn btn-dark mt-1' value="Submit"/>
                         </div>
                     </div>
                 </div>

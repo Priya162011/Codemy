@@ -1,125 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Jost", serif;
-
+.students_data_wrap tr td {
+  font-size: 14px;
+  vertical-align: middle;
 }
 
-.nav-item {
-    float: left;
-    width: 50%;
-}
-.nav-tabs {
-    margin: 20px 0;
-    position: sticky;
-    width: 100%;
-    top: 0px;
-    z-index: 1111;
-    background: #fff;
+.students_data_wrap tr th {
+  font-size: 14px;
+  min-width: 100px;
+  position: sticky;
+  top: -5px;
+  background-color: #f1f1f1;
+  z-index: 1;
+  vertical-align: middle;
 }
 
-.nav-tabs .nav-link {
-    border: none;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 20px 20px 0 0;
-    padding: 15px 20px;
-    text-transform: uppercase;
-    color: #000;
-    border-bottom: 5px solid transparent;
-}
-
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-
-    background-color: rgba(0, 0, 0, 0.1);
-    color: #000;
-    margin-bottom: 0;
-    font-weight: 600;
-    border-color: #000;
-}
-
-.students_data_wrap tr td{
-    font-size: 14px;
-    vertical-align: middle;
-} 
-.students_data_wrap tr th { 
-
-    font-size: 14px;
-    min-width: 100px;
-    position: sticky;
-    top: -5px;
-    background-color: #f1f1f1;
-    z-index: 1;
-    vertical-align: middle;
-}
 .table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    overflow-y: auto;
-    max-height: calc(100vh - 170px);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  max-height: calc(100vh - 170px);
 }
 
-.students_data_wrap tr td img {
-    width: 75px;
-    border: 1px solid #ededed;
-    padding: 5px;
-    border-radius: 10px;
-}
-
-/* width */
 ::-webkit-scrollbar {
-    width: 7px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-
-  .delete_icon {
-    color: red;
-  }
-
-  .edit_icon {
-    color: green;
-  }
-
-  .btn_wrap {
-    background: linear-gradient(20deg,#000,#000);
-    color: #fff;
-    padding: 10px 30px;
-    border-radius: 50px;
-    transition: 0.6s;
-    border: none;
-  }
-  
-  .btn_wrap:hover {
-    background: linear-gradient(20deg, #e95082, #ff0000);
-    transition: 0.6s;
-    color: #fff;
-  }
-
-  .w_100 {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    float: left;
-    width: 100%;
+  width: 7px;
 }
 
-.addmission_top_penel {
-    float: left;
-    width: 100%;
-    background: #f9f9f9;
-    padding: 10px 0;
-    margin-bottom: 20px;
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.receipt-modal .btn-dark{
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.custom-width{
+  width: 200px;
 }

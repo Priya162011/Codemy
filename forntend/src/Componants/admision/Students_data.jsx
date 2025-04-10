@@ -55,26 +55,26 @@ function Students_data() {
 
     const handleclear = () => {
         setfilterstud(students)
-        values.name=''
-        values.date=''
+        values.name = ''
+        values.date = ''
     }
 
     return (
         <>
             <section className="students_data_wrap">
-                <div className="mb-2 container-fluid">
+                <div className="mt-2 mb-2 container-fluid">
                     <form method="post" onSubmit={handleSubmit}>
                         <div className="row">
-                            <div className="col-md-2">
+                            <div className="col-md-3 col-sm-4 m-1">
                                 <input type="date" name="date" className="form-control" onChange={handleChange} value={values.date} />
                             </div>
-                            <div className="col-md-2">
+                            <div className="col-md-3 col-sm-4 m-1">
                                 <input type="text" name="name" placeholder="Enter Name" className="form-control" onChange={handleChange} value={values.name} />
                             </div>
-                            <div className="col-md-1">
+                            <div className="col-md-1 m-1">
                                 <input type="submit" value="Search" className="btn btn-secondary" />
                             </div>
-                            <div className="col-md-1">
+                            <div className="col-md-1 m-1">
                                 <button className="btn btn-secondary" onClick={() => handleclear()}>Clear</button>
                             </div>
                         </div>
@@ -98,7 +98,7 @@ function Students_data() {
                                 <th>Parent Proffesion</th>
                                 <th>Reference</th>
                                 <th>Total Fees Amount</th>
-                                <th>Paid Amount</th>
+                                <th className="custom-width">Paid Amount</th>
                                 <th>Pending Amount</th>
                                 <th>Payable Amount</th>
                                 <th>Address</th>
@@ -114,7 +114,7 @@ function Students_data() {
                                     <td>{item.enrno}</td>
                                     <td>{item.courseDetails.name}</td>
                                     <td>{item.name}</td>
-                                    <td><img src={`/uploads/${item.image}`} className="img-responsive" /></td>
+                                    <td><img src={`/uploads/${item.image}`} className="img-responsive" height="100px" width="100px"/></td>
                                     <td>{item.batch}</td>
                                     <td>{item.status == 0 ? 'Running' : item.status == 1 ? 'Not join' : item.status == 2 ? 'Droped' : 'Completed'}</td>
                                     <td>{new Date(item.joindate).toLocaleDateString("en-GB")}</td>
@@ -125,17 +125,11 @@ function Students_data() {
                                     <td>{item.parentprofile}</td>
                                     <td>{item.ref}</td>
                                     <td>₹{item.totalfees}</td>
-                                    <td>{item.payments.map((v, i) => {
+                                    <td><ul>{item.payments.map((v, i) => {
                                         amt = parseInt(amt) + parseInt(v.amount)
-                                        return <>
-                                            <br />
-                                            #: {i + 1}<br />
-                                            Amount:₹{v.amount} <br />
-                                            Date: {new Date(v.createdAt).toLocaleDateString('en-GB')}<br />
-                                            Method: {v.type === "1" ? 'Cash' : v.type === "2" ? 'UPI' : 'Check'}<br />
-                                            ---------
-                                        </>
-                                    })}</td>
+                                        return <li>₹{v.amount}-{new Date(v.createdAt).toLocaleDateString('en-GB')}-{v.type === "1" ? 'Cash' : v.type === "2" ? 'UPI' : 'Check'}</li>
+                                       
+                                    })}</ul></td>
                                     <td>₹{item.totalfees - amt}</td>
                                     <td>
                                         {
@@ -144,13 +138,12 @@ function Students_data() {
                                                     <table key={i + 1}>
                                                         <tbody>
                                                             <tr className="mb-2">
-
                                                                 <td className="mr-2">₹{v.amount}-{new Date().toLocaleDateString("en-GB")}</td>
-                                                                <td>{<button className="btn btn-secondary m-1" onClick={() => {
+                                                                <td>{<button className="btn btn-success btn-sm m-1" onClick={() => {
                                                                     setSelectedStudentId(item._id);
                                                                     setSelectedinstallment({ date: v.date, amount: v.amount, _id: v._id, name: item.name, course: item.courseDetails.name, enrno: item.enrno })
                                                                 }} data-bs-toggle="modal" data-bs-target="#paymodal">Pay</button>}</td>
-                                                                <td>(Registrationfee)</td>
+                                                                <td className="fs-6">(Registrationfee)</td>
                                                             </tr>
                                                         </tbody>
                                                     </table> : ''
@@ -161,7 +154,7 @@ function Students_data() {
                                                     <tbody>
                                                         <tr className="mb-2">
                                                             <td className="mr-2">₹{v.amount}-{new Date(v.date).toLocaleDateString("en-GB")}</td>
-                                                            <td>{item.status === 0 ? <button className="btn btn-secondary m-1" onClick={() => {
+                                                            <td>{item.status === 0 ? <button className="btn btn-success btn-sm m-1" onClick={() => {
                                                                 setSelectedStudentId(item._id);
                                                                 setSelectedinstallment({ date: v.date, amount: v.amount, _id: v._id, name: item.name, course: item.courseDetails.name, enrno: item.enrno })
                                                             }} data-bs-toggle="modal" data-bs-target="#paymodal">Pay</button> : ''}</td>

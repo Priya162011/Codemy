@@ -34,7 +34,7 @@ const Receipt = forwardRef(({ studentData },ref) => {
         
     };
     return (
-        <div class="modal-dialog">
+        <div class="modal-dialog receipt-modal">
             <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -90,7 +90,7 @@ const Receipt = forwardRef(({ studentData },ref) => {
                     </div>
                 </div>
             </div>
-            <button onClick={() => handleDownloadPDF()}>Print Receipt</button>
+            <button className='btn btn-dark' onClick={() => handleDownloadPDF()}>Print Receipt</button>
             </div>
         </div>
     );

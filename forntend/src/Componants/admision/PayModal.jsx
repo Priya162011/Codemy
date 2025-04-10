@@ -55,7 +55,7 @@ function PayModal(props) {
               <option value="3">Check</option>
             </select>
             
-            <button type="submit" className="btn_wrap mt-3 w-100">
+            <button type="submit" className="btn btn-dark mt-2">
               Pay
             </button>
           </form>

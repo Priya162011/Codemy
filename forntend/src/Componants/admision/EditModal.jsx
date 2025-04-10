@@ -102,7 +102,7 @@ function EditModal(props) {
         <div className="modal-dialog">
             <div className="modal-content">
                 <div className="modal-header">
-                    <h1 className="modal-title fs-5" id="exampleModalLabel">Edit Student</h1>
+                    <h1 className="modal-title fs-5" id="exampleModalLabel">Edit Student Details</h1>
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div className="modal-body">
@@ -268,7 +268,7 @@ function EditModal(props) {
                                     </div>
                                 </div>
                                 <div className='col-md-3'>
-                                    <button className='btn_wrap w-100 mt-1' data-bs-toggle="modal" data-bs-target="#exampleModal5">Submit</button>
+                                    <input type='submit' className='btn btn-dark mt-1' data-bs-toggle="modal" data-bs-target="#exampleModal5" value="Submit"/>
                                 </div>
                             </div>
                         </div>
