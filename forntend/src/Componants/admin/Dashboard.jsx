@@ -41,42 +41,42 @@ function Dashboard() {
     setrunningstud(running.length)
   }, [student, faculty])
   return (
-    <div className='container'>
-      <div className='row d-flex justify-content-between'>
-        <div className='col-md-2 border p-3'>
+    <div className='container-fuild'>
+      <div className='row m-1'>
+        <div className='col-md-2 border p-3 m-1 bg-secondary text-light'>
           <h6>Total Student</h6>
           <strong>{totalstud}</strong>
         </div>
-        <div className='col-md-2 border p-3'>
+        <div className='col-md-2 border p-3 m-1 bg-secondary text-light'>
           <h6>Running Student</h6>
           <strong>{runningstud}</strong>
         </div>
-        <div className='col-md-2 border p-3'>
+        <div className='col-md-2 border p-3 m-1 bg-secondary text-light'>
           <h6>Droped Student</h6>
           <strong>{dropedstud}</strong>
         </div>
-        <div className='col-md-2 border p-3'>
+        <div className='col-md-2 border p-3 m-1 bg-secondary text-light'>
           <h6>Completed Student</h6>
           <strong>{completedstud}</strong>
         </div>
-        <div className='col-md-2 border p-3'>
+        <div className='col-md-2 border p-3 m-1 bg-secondary text-light'>
           <h6>Not Jioned Student</h6>
           <strong>{notjoinstud}</strong>
         </div>
-        <div className='col-md-2 border p-3'>
+        <div className='col-md-2 border p-3 m-1 bg-secondary text-light'>
           <h6>In Job Student</h6>
           <strong>{jobstud}</strong>
         </div>
-        <div className='col-md-2 border p-3'>
+        <div className='col-md-2 border p-3 m-1 bg-secondary text-light'>
           <h6>Total Faculty</h6>
           <strong>{totalfaculty}</strong>
         </div>
       </div>
-      <div className='row mt-2'>
-        <h4>Today's Admission</h4>
+      <div className='row m-1 mt-4'>
+        <h4 className='text-uppercase text-decoration-underline'>Today's Admission</h4>
       </div>
-      <div className='row'>
-        <table className='table'>
+      <div className='row m-1 table-responsive'>
+        <table className='table table-bordered'>
           <thead>
             <tr>
               <th scope='col'>#</th>
@@ -100,7 +100,7 @@ function Dashboard() {
           {
                         todayadmission.map((item,i)=>{
                             return <tr key={i+1}>
-                            <th scope="row">{i+1}</th>
+                            <td>{i+1}</td>
                             <td><img src={`/uploads/${item.image}`} width={100} height={100}/></td>
                             <td>{item.name}</td>
                             <td>{item.email}</td>

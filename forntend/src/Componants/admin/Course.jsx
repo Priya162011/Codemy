@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router'
+import { MdDelete } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
 
 function Course() {
     const [course,setcourse]=useState([])
@@ -11,6 +13,15 @@ function Course() {
             console.log(err)
         })
     },[])
+    const handledelete=(id)=>{
+        console.log(id)
+        axios.delete(`/api/course/${id}`).then(res=>{
+            alert(res.data.data.message)
+            setcourse(course => course.filter(c => c._id !== id));
+        }).catch(err=>{
+            console.log(err)
+        })
+    }
     return (
         <div className='container'>
             <div className='row'>
@@ -33,6 +44,10 @@ function Course() {
                             return <tr key={i+1}>
                             <th scope="row">{i+1}</th>
                             <td>{item.name}</td>
+                            <td>
+                                <NavLink><FaEdit className="edit_icon"  data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"/></NavLink>
+                                <NavLink onClick={()=>{handledelete(item._id)}}><MdDelete className="delete_icon"  data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" /> </NavLink>
+                            </td>
                         </tr>
                         })
                     }

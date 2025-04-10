@@ -40,3 +40,13 @@
 .custom-width{
   width: 200px;
 }
+
+.edit_icon{
+  color: green;
+  margin: 10px;
+}
+
+.delete_icon{
+  color: red;
+  margin: 10px;
+}

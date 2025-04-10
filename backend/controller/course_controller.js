@@ -36,4 +36,22 @@ const new_course=async(req,res)=>{
     }
 }
 
-module.exports={new_course,courses}
+const delete_course=async(req,res)=>{
+    try{
+        const {id}=req.params
+        const course=await course_model.findByIdAndDelete(id);
+        if(!course){
+            res.status(404).json({status:false,data:{message:'no record'}})
+        }
+        else
+        {
+            
+            res.status(200).json({status:true,data:{message:'data delted successfully'}})
+        }
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+
+module.exports={new_course,courses,delete_course}
