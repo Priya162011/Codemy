@@ -118,7 +118,7 @@ function Students_data() {
                                     <td>{item.enrno}</td>
                                     <td>{item.courseDetails.name}</td>
                                     <td>{item.name}</td>
-                                    <td><img src={`/uploads/${item.image}`} className="img-responsive" height="100px" width="100px" /></td>
+                                    <td><img src={`https://api.codemy.live/uploads/${item.image}`} className="img-responsive" height="100px" width="100px" /></td>
                                     <td>{item.batch}</td>
                                     <td>{item.status == 0 ? 'Running' : item.status == 1 ? 'Not join' : item.status == 2 ? 'Droped' : 'Completed'}</td>
                                     <td>{new Date(item.joindate).toLocaleDateString("en-GB")}</td>

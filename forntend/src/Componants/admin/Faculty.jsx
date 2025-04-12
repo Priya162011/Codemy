@@ -38,7 +38,7 @@ function Faculty() {
                         faculty.map((item,i)=>{
                             return <tr key={i+1}>
                             <th scope="row">{i+1}</th>
-                            <td><img src={`/uploads/${item.image}`} height={100} width={100}/></td>
+                            <td><img src={`https://api.codemy.live/uploads/${item.image}`} height={100} width={100}/></td>
                             <td><NavLink to="/admin/student/" state={{id:item._id}}>{item.name}</NavLink></td>
                             <td>{item.email}</td>
                             <td>{item.contactno}</td>

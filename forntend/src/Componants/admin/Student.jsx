@@ -54,7 +54,7 @@ function Student() {
                     (!stud_id?student:filstudent).map((item,i)=>{
                             return <tr key={i+1}>
                             <th scope="row">{i+1}</th>
-                            <td><img src={`/uploads/${item.image}`} width={100} height={100}/></td>
+                            <td><img src={`https://api.codemy.live/uploads/${item.image}`} width={100} height={100}/></td>
                             <td>{item.name}</td>
                             <td>{item.email}</td>
                             <td>{item.contactno}</td>

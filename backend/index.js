@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { Server } = require("socket.io");
 const http = require("http");
+const path = require('path');
 const session = require('express-session');
 const { SECRET } = require('./utility/config')
 const { PORT } = require("./utility/config");
