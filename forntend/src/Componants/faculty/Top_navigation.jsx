@@ -4,6 +4,7 @@ import { FaUserTie } from "react-icons/fa6";
 import axios from "axios"
 import { useDispatch } from "react-redux"
 import logout from "../Slices/LoginSlice"
+import logo from "./logo.png"
 
 function Top_navigation() {
     const [user, setuser] = useState(null)
@@ -21,39 +22,40 @@ function Top_navigation() {
     return (
         <>
             <section className='top_navigation_wrap'>
-                <div className="container-fluid">
-                    <div className="w_100">
-                        <div className="w_20">
-                            <h5 className='text-white mb-0'>Welcome {user?.name}..!</h5>
-                        </div>
-                        <div className="w_80">
-                            <ul>
-                                <li>
-                                    <NavLink to="/faculty" className={({ isActive }) => (isActive ? 'active' : '')}> Dashboard</NavLink >
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                                  <NavLink className="navbar-brand" to="/admision"><img src={logo} height={50} width={150} /></NavLink>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <NavLink to="/faculty" className={({ isActive }) => (isActive ? 'active nav-link' : 'nav-link')}> Dashboard</NavLink >
                                 </li>
-                                <li>
-                                    <NavLink to="/faculty/students" className={({ isActive }) => (isActive ? 'active' : '')}> All Students </NavLink >
+                                <li class="nav-item">
+                                    <NavLink to="/faculty/students" className={({ isActive }) => (isActive ? 'active nav-link' : 'nav-link')}> All Students </NavLink >
                                 </li>
-                                <li>
-                                    <NavLink to="/faculty/exam" className={({ isActive }) => (isActive ? 'active' : '')}> Exam </NavLink >
+                                <li class="nav-item">
+                                    <NavLink to="/faculty/exam" className={({ isActive }) => (isActive ? 'active nav-link' : 'nav-link')}> Exam </NavLink >
                                 </li>
-                                <li>
-                                    <NavLink to="/faculty/leave" className={({ isActive }) => (isActive ? 'active' : '')}> Leave </NavLink >
-                                </li>
-                                <li>
-
-                                    <h6 className='faculty_name' data-bs-toggle="dropdown" aria-expanded="false"><span> <FaUserTie /></span> {user?.name}</h6>
-
-                                    <div className="dropdown-menu">
-                                        <NavLink to="/" onClick={handlelogout}>Logout</NavLink>
-                                    </div>
-
+                                <li class="nav-item">
+                                    <NavLink to="/faculty/leave" className={({ isActive }) => (isActive ? 'active nav-link' : 'nav-link')}> Leave </NavLink >
                                 </li>
 
                             </ul>
+                            <ul class="navbar-nav mb-2 mb-lg-0  d-flex justify-content-end">
+                                <li class="nav-item dropdown">
+                                    <h6 className='faculty_name btn btn-outline-secondary' data-bs-toggle="dropdown" aria-expanded="false"><span> <FaUserTie /></span> {user?.name}</h6>
+                                    <div className="dropdown-menu">
+                                        <NavLink className="btn" to="/" onClick={handlelogout}>Logout</NavLink>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                </div>
+                </nav>
+
             </section>
         </>
     )

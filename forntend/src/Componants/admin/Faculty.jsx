@@ -19,6 +19,7 @@ function Faculty() {
             <div className='row'>
                 <NavLink to="/admin/addfaculty">+NEW</NavLink>
             </div>
+            <div className='table-responsive'>
             <table class="table table-striped border mt-2">
                 <thead>
                     <tr>
@@ -48,6 +49,7 @@ function Faculty() {
                     }
                 </tbody>
             </table>
+            </div>
         </div>
   )
 }

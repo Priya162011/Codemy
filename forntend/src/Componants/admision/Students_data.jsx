@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
+import { MdOutlineClear } from "react-icons/md";
+import { IoMdSearch } from "react-icons/io";
 import { FaEdit } from "react-icons/fa";
 import axios from "axios"
 import EditModal from "../admision/EditModal";
@@ -65,17 +67,19 @@ function Students_data() {
                 <div className="mt-2 mb-2 container-fluid">
                     <form method="post" onSubmit={handleSubmit}>
                         <div className="row">
-                            <div className="col-md-3 col-sm-4 m-1">
+                            <div className="col-md-3 col-sm-4 mt-1">
                                 <input type="date" name="date" className="form-control" onChange={handleChange} value={values.date} />
                             </div>
-                            <div className="col-md-3 col-sm-4 m-1">
+                            <div className="col-md-3 col-sm-4 mt-1">
                                 <input type="text" name="name" placeholder="Enter Name" className="form-control" onChange={handleChange} value={values.name} />
                             </div>
-                            <div className="col-md-1 m-1">
-                                <input type="submit" value="Search" className="btn btn-secondary" />
-                            </div>
-                            <div className="col-md-1 m-1">
-                                <button className="btn btn-secondary" onClick={() => handleclear()}>Clear</button>
+                            <div className="col-md-2 mt-1">
+                                <button type="submit" className="btn btn-secondary">
+                                    <IoMdSearch />Search
+                                </button>
+                                </div>
+                            <div className="col-md-2 mt-1">
+                                <button className="btn btn-secondary" onClick={() => handleclear()}><MdOutlineClear />Clear</button>
                             </div>
                         </div>
                     </form>
@@ -114,7 +118,7 @@ function Students_data() {
                                     <td>{item.enrno}</td>
                                     <td>{item.courseDetails.name}</td>
                                     <td>{item.name}</td>
-                                    <td><img src={`/uploads/${item.image}`} className="img-responsive" height="100px" width="100px"/></td>
+                                    <td><img src={`/uploads/${item.image}`} className="img-responsive" height="100px" width="100px" /></td>
                                     <td>{item.batch}</td>
                                     <td>{item.status == 0 ? 'Running' : item.status == 1 ? 'Not join' : item.status == 2 ? 'Droped' : 'Completed'}</td>
                                     <td>{new Date(item.joindate).toLocaleDateString("en-GB")}</td>
@@ -127,8 +131,8 @@ function Students_data() {
                                     <td>₹{item.totalfees}</td>
                                     <td><ul>{item.payments.map((v, i) => {
                                         amt = parseInt(amt) + parseInt(v.amount)
-                                        return <li>₹{v.amount}-{new Date(v.createdAt).toLocaleDateString('en-GB')}-{v.type === "1" ? 'Cash' : v.type === "2" ? 'UPI' : 'Check'}</li>
-                                       
+                                        return <li key={i+1}>₹{v.amount}-{new Date(v.createdAt).toLocaleDateString('en-GB')}-{v.type === "1" ? 'Cash' : v.type === "2" ? 'UPI' : 'Check'}</li>
+
                                     })}</ul></td>
                                     <td>₹{item.totalfees - amt}</td>
                                     <td>

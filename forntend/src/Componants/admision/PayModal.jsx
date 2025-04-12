@@ -15,7 +15,7 @@ function PayModal(props) {
     initialValues: {
       student: id,
       amount: installmentDetails?.amount,
-      type: '',
+      type: '0',
       date: installmentDetails?.date,
       id: installmentDetails?._id,
       status: 0,

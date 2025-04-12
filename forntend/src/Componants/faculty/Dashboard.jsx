@@ -67,37 +67,37 @@ function Dashboard() {
     <section className='Faculty_dashboard_wrap'>
       <div className="container-fluid">
         <div className="row mt-2">
-          <div className="col">
+          <div className="col-md-2 col">
             <div className="box_wrap">
               <h6>Total Students</h6>
               <h3>{total}</h3>
             </div>
           </div>
-          <div className="col">
+          <div className="col-md-2 col">
             <div className="box_wrap running_wrap">
               <h6>Running Students</h6>
               <h3>{runningCount}</h3>
             </div>
           </div>
-          <div className="col">
+          <div className="col-md-2 col">
             <div className="box_wrap drop_wrap">
               <h6>Dropped Students</h6>
               <h3>{droppedCount}</h3>
             </div>
           </div>
-          <div className="col">
+          <div className="col-md-2 col">
             <div className="box_wrap complete_wrap">
               <h6>Completed Students</h6>
               <h3>{completedCount}</h3>
             </div>
           </div>
-          <div className="col">
+          <div className="col-md-2 col">
             <div className="box_wrap not_join_wrap">
               <h6>Not Joined Students</h6>
               <h3>{notJoinedCount}</h3>
             </div>
           </div>
-          <div className="col">
+          <div className="col-md-2 col">
             <div className="box_wrap in_job_wrap">
               <h6>In-Job Students</h6>
               <h3>{injobCount}</h3>
