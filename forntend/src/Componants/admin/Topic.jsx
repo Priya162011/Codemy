@@ -19,7 +19,8 @@ function Topic() {
             <div className='row'>
                 <NavLink to="/admin/addtopic">+NEW</NavLink>
             </div>
-            <table class="table table-striped border mt-2">
+            <div className='table-responsive'>
+            <table className="table table-striped border mt-2">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -39,6 +40,7 @@ function Topic() {
                     }
                 </tbody>
             </table>
+            </div>
         </div>
   )
 }

@@ -30,7 +30,7 @@ function Course() {
             <div className='row'>
                 <NavLink to="/admin/addcourse">+NEW</NavLink>
             </div>
-            <table class="table table-striped border mt-2">
+            <table className="table table-striped border mt-2">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

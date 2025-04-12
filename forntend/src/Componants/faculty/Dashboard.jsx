@@ -130,7 +130,7 @@ function Dashboard() {
                     <tr key={index + 1}>
                       <td>{index + 1}</td>
                       <td>{item.name}</td>
-                      <td><img src={`http://localhost:5000/uploads/${item.image}`} alt="" /></td>
+                      <td><img src={`https://api.codemy.live/uploads/${item.image}`} alt="" height={100} width={100}/></td>
                       <td>{item.batch}</td>
                       <td>{item.course.name}</td>
                       <td>

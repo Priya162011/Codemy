@@ -40,35 +40,35 @@ function AddFaculty() {
 
     return (
         <div className='container'>
-            <div className='row m-1'>
-                <h4>Add Faculty</h4>
-            </div>
-            <form className="m-2" method='post' onSubmit={handleSubmit}>
+            <form className="mx-auto border rounded col-md-10 p-5 pt-3" method='post' onSubmit={handleSubmit}>
+                <div className='row m-1 text-center text-decoration-underline'>
+                    <h3>Add Faculty</h3>
+                </div>
                 <div className='row'>
-                    <div className='col-md-4'>
-                        <label className='form-label'>Name</label>
+                    <div className='col-md-6'>
+                        <label className='form-label fw-bold'>Name</label>
                         <input type='text' name='name' placeholder='Enter Name' value={values.name} onChange={handleChange} required className='form-control' />
-                    </div>
-                    <div className='col-md-4'>
-                        <label className='form-label'>Email</label>
+                    <br/></div>
+                    <div className='col-md-6'>
+                        <label className='form-label fw-bold'>Email</label>
                         <input type='email' name='email' placeholder='Enter Email' value={values.email} onChange={handleChange} required className='form-control' />
-                    </div>
-                    <div className='col-md-4'>
-                        <label className='form-label'>Contact No.</label>
+                    <br/></div>
+                    <div className='col-md-6'>
+                        <label className='form-label fw-bold'>Contact No.</label>
                         <input type='text' name='contactno' placeholder='Enter Contact No.' value={values.contactno} onChange={handleChange} required className='form-control' />
-                    </div>
-                    <div className='col-md-4'>
-                        <label className='form-label'>Address</label>
+                    <br/></div>
+                    <div className='col-md-6'>
+                        <label className='form-label fw-bold'>Address</label>
                         <input type='text' name='address' placeholder='Enter Address' value={values.address} onChange={handleChange} required className='form-control' />
-                    </div>
-                    <div className='col-md-4'>
-                        <label className='form-label'>Qualification</label>
+                    <br/></div>
+                    <div className='col-md-6'>
+                        <label className='form-label fw-bold'>Qualification</label>
                         <input type='text' name='qualification' placeholder='Enter Qualification' value={values.qualification} onChange={handleChange} required className='form-control' />
-                    </div>
-                    <div className='col-md-4'>
-                        <label className='form-label'>Image</label>
+                    <br/></div>
+                    <div className='col-md-6'>
+                        <label className='form-label fw-bold'>Image</label>
                         <input type='file' name='image' onChange={(e) => setImageFile(e.target.files[0])} required className='form-control' />
-                    </div>
+                    <br/></div>
                     <div className='col-md-12 mt-2'>
                         <input type='submit' value="Submit" className='btn btn-secondary' />
                     </div>

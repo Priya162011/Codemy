@@ -12,10 +12,11 @@ function Payment() {
     },[])
     return (
         <div className='container'>
-            <div className='row'>
-                <h4>All payment</h4>
+            <div className='row m-1 text-decoration-underline'>
+                <h3>All payment</h3>
             </div>
-            <table class="table table-striped border mt-2">
+            <div className='table-responsive'>
+            <table className="table  table-striped border mt-2">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -37,6 +38,7 @@ function Payment() {
                     }
                 </tbody>
             </table>
+            </div>
         </div>
     )
 }

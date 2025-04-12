@@ -20,7 +20,7 @@ function Faculty() {
                 <NavLink to="/admin/addfaculty">+NEW</NavLink>
             </div>
             <div className='table-responsive'>
-            <table class="table table-striped border mt-2">
+            <table className="table table-striped border mt-2">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

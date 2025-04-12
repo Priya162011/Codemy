@@ -26,10 +26,11 @@ function Student() {
 
   return (
     <div className='container'>
-            <div className='row'>
-                <h4>All student</h4>
+            <div className='row m-1 text-decoration-underline'>
+                <h3>All student</h3>
             </div>
-            <table class="table table-striped border mt-2">
+            <div className='table-responsive row'>
+            <table className="table table-striped border mt-2">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -67,14 +68,15 @@ function Student() {
                             <td>{item.batch}</td>
                             <td>{item.ref}</td>
                             <td>{item.faculty.name}</td>
-                            <td>{item.installmentDetails.map((item,i)=>{
-                                    return <tr key={i+1}>₹{item.amount}-{new Date(item.date).toLocaleDateString('en-GB')}</tr>
-                            })}</td>
+                            <td><table><tbody>{item.installmentDetails.map((item,i)=>{
+                                    return <tr key={i+1}><td>₹{item.amount}-{new Date(item.date).toLocaleDateString('en-GB')}</td></tr>
+                            })}</tbody></table></td>
                         </tr>
                         })
                     }
                 </tbody>
             </table>
+            </div>
         </div>
   )
 }

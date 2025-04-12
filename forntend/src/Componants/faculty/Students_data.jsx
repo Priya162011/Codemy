@@ -166,8 +166,10 @@ function Students_data() {
                     <td>{item.name}</td>
                     <td>
                       <img
-                        src={`/uploads/${item.image}`}
+                        src={`https://api.codemy.live/uploads/${item.image}`}
                         className="student_img"
+                        height={100}
+                        width={100}
                       />
                     </td>
                     <td>{item.batch}</td>
