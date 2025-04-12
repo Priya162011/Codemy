@@ -113,7 +113,7 @@ function EditModal(props) {
                 </div>
               </div>
 
-              <button type="submit" className="btn_wrap mt-3 w-100">
+              <button type="submit" className="btn btn-secondary mt-2">
                 Submit
               </button>
             </div>

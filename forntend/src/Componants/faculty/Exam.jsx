@@ -112,7 +112,7 @@ function Exam() {
                                     onChange={handleStudentChange}
                                 />
                             </div>
-                            <input type='submit' className='btn_wrap  mt-1' value="Submit" />
+                            <input type='submit' className='btn btn-secondary mt-2' value="Submit" />
                         </form>
                     </div>
 

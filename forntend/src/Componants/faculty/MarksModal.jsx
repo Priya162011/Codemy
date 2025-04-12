@@ -96,7 +96,7 @@ function MarksModal(props) {
               <div className="text-danger">{errors.exam}</div>
             ) : null}
 
-            <input type="submit" className="btn_wrap mt-3 w-100" value="Submit" />
+            <input type="submit" className="btn btn-secondary mt-2" value="Submit" />
 
           </form>
         </div>
