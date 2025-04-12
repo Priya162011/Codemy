@@ -52,7 +52,7 @@ function Report() {
       <div className="container">
         <h3 className="main_title mt-2">Course Progress</h3>
         <div className="row mb-2">
-          <div className="col-md-3">
+          <div className="col-md-3 mb-2">
             <div className="card shadow-sm">
               <div className="card-header bg-warning">
                 <h5>Syllabus</h5>
@@ -65,7 +65,7 @@ function Report() {
             </div>
           </div>
 
-          <div className="col-md-3">
+          <div className="col-md-3 mb-2">
             <div className="card shadow-sm">
               <div className="card-header bg-success">
                 <h5>Completed Topics</h5>
@@ -79,7 +79,7 @@ function Report() {
           </div>
 
           
-          <div className="col-md-3">
+          <div className="col-md-3 mb-2">
             <div className="card shadow-sm">
               <div className="card-header bg-primary">
                 <h5>Running Topics</h5>
@@ -92,7 +92,7 @@ function Report() {
             </div>
           </div>
 
-          <div className="col-md-3">
+          <div className="col-md-3 mb-2">
             <div className="card shadow-sm">
               <div className="card-header bg-danger">
                 <h5>Pending Topics</h5>

@@ -1,11 +1,9 @@
 import React from 'react'
-
+import error from "../assets/error.gif"
 function ErrorPage() {
   return (
-    <div>
-        <div className='text-center mt-4'>
-            <h2>404 - Page Not Found</h2>
-        </div>
+    <div className='container-fuild'>
+        <img src={error} alt='404! Page Not Found' className='img-fluid'/>
     </div>
   )
 }

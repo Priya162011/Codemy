@@ -56,3 +56,9 @@
   left: -92px;
   margin-top: var(--bs-dropdown-spacer);
 }
+
+.img-fluid{
+  max-width: 100%;
+  width: 100%;
+  height: 100vh;
+}
