@@ -50,8 +50,8 @@ function Report() {
   return (
     <section className="progress_report">
       <div className="container">
-        <h3 className="main_title">Course Progress</h3>
-        <div className="row">
+        <h3 className="main_title mt-2">Course Progress</h3>
+        <div className="row mb-2">
           <div className="col-md-3">
             <div className="card shadow-sm">
               <div className="card-header bg-warning">

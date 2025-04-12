@@ -22,7 +22,8 @@ function Marks() {
   return (
     <section className="Marks_report">
       <div className="container-fluid">
-        <h3 className="main_title">Exam Report</h3>
+        <h3 className="main_title mt-2">Exam Report</h3>
+        <div className='table-responsive'>
         <table className="table table-bordered">
           <thead>
             <tr className="bg-light">
@@ -52,6 +53,7 @@ function Marks() {
             }
           </tbody>
         </table>
+        </div>
       </div>
     </section>
   )

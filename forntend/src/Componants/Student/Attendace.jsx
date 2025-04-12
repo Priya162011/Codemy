@@ -31,7 +31,7 @@ function Attendace() {
   return (
     <section className="attendace_report">
       <div className="container-fluid">
-        <h3 className="main_title">Attendance Report</h3>
+        <h3 className="main_title mt-2">Attendance Report</h3>
         <div className="table-responsive">
 
           <table className="table table-bordered">
@@ -65,7 +65,7 @@ function Attendace() {
                           {item.status === 0 ? "A" : item.status === 1 ? "P" : "L"}
                         </span>
                       </td>
-                      <td>{item.status === 2 ? item.remark: item.status===0 ? !item.remark?"No Reason provided":item.remark:""}</td>
+                      <td>{item.status === 2 ? item.remark : item.status === 0 ? !item.remark ? "No Reason provided" : item.remark : ""}</td>
                     </tr>
                   );
                 })
