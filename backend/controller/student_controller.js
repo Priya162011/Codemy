@@ -2,7 +2,16 @@ const mongoose=require("mongoose")
 const student_model=mongoose.model('student')
 const payment_model=mongoose.model('payment')
 const bcrypt=require("bcrypt")
+const nodemailer = require('nodemailer')
+let transporter = nodemailer.createTransport({
+    service: 'gmail', 
+    auth: {
+      user: 'manage.codemy@gmail.com',
+      pass: 'xnze vwek ipnu viai' 
+    }
+  });
 
+  
 //retrive all students
 const students=async(req,res)=>{
     try {
@@ -109,8 +118,21 @@ const register = async (req, res) => {
         });
     
         await payment.save();
-    
-        res.status(201).json({ message: "Student and payment data inserted successfully", student: savedStudent });
+        let mailOptions = {
+            from: 'manage.codemy@gmail.com',
+            to: email,
+            subject: 'CodemyIT Institute Confirmation',
+            text: `Hello ${name}, You are recently register as student at CodemyIT Institute so, Your Username = ${enrno} and Password = ${contactno}. Thank You! For choosing us as your career guide and Most Welcome to our Institute.`,
+          };
+
+          transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+              console.log('Error:', error);
+            } else {
+              console.log('Email sent: ' + info.response);
+            }
+          });
+        res.status(200).json({ message: "Student and payment data inserted successfully", student: savedStudent });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

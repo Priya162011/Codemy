@@ -54,4 +54,22 @@ const delete_course=async(req,res)=>{
     }
 }
 
-module.exports={new_course,courses,delete_course}
+const edit_course=async(req,res)=>{
+    try{
+        const {id}=req.params
+        const data=req.body
+        const course=await course_model.findByIdAndUpdate(id,data,{new:true});
+        if(!course){
+            res.status(404).json({status:false,data:{message:'no record'}})
+        }
+        else
+        {
+            res.status(200).json({status:true,data:{message:'data edited successfully'}})
+        }
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+
+module.exports={new_course,courses,delete_course,edit_course}
